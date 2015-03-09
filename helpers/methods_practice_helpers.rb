@@ -4,6 +4,9 @@ module MethodsPracticeHelpers
     # Generate an image tag with the given source and the classes
     # "img-responsive" and "img-thumbnail". The image should also have an alt
     # attribute with the contents of alternate_text.
+
+    #<img src="source" class="img-responsive" alt="alternate_text">
+    #<img src="source" class="img-thumbnail" alt="alternate_text">
   end
 
   def bootstrap_alert(message, type='info')
@@ -17,6 +20,8 @@ module MethodsPracticeHelpers
     # Give the current date and time, in the format: "February 6, 2015 at 4:25pm"
     # Time.now.strftime is a great method chain you can use for this purpose.
     # See how to use it at: http://apidock.com/ruby/Time/strftime
+    Time.now.strftime("%B %m, %Y at %l:%M%p")
+
   end
 
   # ------------------------------------------
