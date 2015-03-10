@@ -13,15 +13,18 @@ module MethodsPracticeHelpers
     # to remember all HTML needed to do it right). It should show the message in
     # the "message" variable and should have a class appropriate for the "type"
     # that is passed in, defaulting to 'info' if no type is passed in.
-    "<div class=\"alert alert-#{type}\" role=\"alert\">#{message}</div>"
+    "<div class=\"alert alert-#{type} alert-dismissible\" alert-dismissible=\'true\' role=\"alert\">
+    <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;
+    </span></button>
+    #{message}
+    </div>"
   end
 
   def current_date_and_time
     # Give the current date and time, in the format: "February 6, 2015 at 4:25pm"
     # Time.now.strftime is a great method chain you can use for this purpose.
     # See how to use it at: http://apidock.com/ruby/Time/strftime
-    Time.now.strftime("%B %m, %Y at %l:%M%P")
-
+    Time.now.strftime("%B %-d, %Y at%l:%M%P")
   end
 
   # ------------------------------------------
@@ -39,6 +42,9 @@ module MethodsPracticeHelpers
   def images_of_cats(number_of_cats)
     # Use the cat_api gem (https://github.com/chrisvfritz/cat_api)
     # to generate number_of_cats image tags that are injected into the page
+    #"<img src=\"@cat_image.url\" class=\"img-responsive img-thumbnail\" alt=\"#{alternate_text}\">"
+    #cat_image.get_images(results_per_page: number_of_cats)
+
   end
 
   def book_search_for(book_title, results=10)
